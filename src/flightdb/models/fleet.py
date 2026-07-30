@@ -22,7 +22,7 @@ class AircraftType(TimestampMixin, Base):
     model: Mapped[str] = mapped_column(String(50), nullable=False)
     max_range_km: Mapped[int | None] = mapped_column(Integer, nullable=True)
     cruise_speed_kmh: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    
+  
     cabin_layouts: Mapped[list["CabinLayout"]] = relationship(back_populates="aircraft_type")
     aircraft: Mapped[list["Aircraft"]] = relationship(back_populates="aircraft_type")
 

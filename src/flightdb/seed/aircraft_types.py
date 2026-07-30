@@ -44,6 +44,15 @@ AIRCRAFT_TYPES = [
         "max_range_km": 14140,
         "cruise_speed_kmh": 903,
     },
+     {
+            "iata_code": "812",
+            "name": "Boeing 812-9 Dreamer",
+            "manufacturer": "Boeing",
+            "model": "812-9",
+            "max_range_km": 14140,
+            "cruise_speed_kmh": 1000,
+        },
+        
 ]
 
 
