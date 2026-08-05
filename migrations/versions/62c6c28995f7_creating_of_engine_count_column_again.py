@@ -1,8 +1,8 @@
-"""Creating of engine_count column again
+"""Column added to aircrafttype table
 
-Revision ID: 62c6c28995f7
+Revision ID: 9bb4c487f1f2
 Revises: 99565cac3599
-Create Date: 2026-07-30 14:41:26.236356
+Create Date: 2026-07-30 12:25:38.947957
 
 """
 from typing import Sequence, Union
@@ -19,8 +19,21 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade() -> None:
-    pass
+    op.add_column(
+        'aircraft_types',
+        sa.Column(
+            'engine_count',
+            sa.Integer(),
+            nullable=False,
+            server_default="2"
+        )
+    )
 
-
+    op.alter_column(
+        'aircraft_types',
+        'engine_count',
+        server_default=None
+    )
+    
 def downgrade() -> None:
-    pass
+    op.drop_column('aircraft_types','engine_count')
